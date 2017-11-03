@@ -172,8 +172,8 @@ body {
     height: 2px;
     background: #fff;
     content: '';
-    -webkit-transition: -webkit-transform 0.35s;
-    transition: transform 0.35s;
+    -webkit-transition: -webkit-transform 0.75s;
+    transition: transform 0.75s;
     -webkit-transform: translate3d(-100%,0,0);
     transform: translate3d(-100%,0,0);
 }
@@ -188,8 +188,8 @@ body {
     text-shadow: 2px 1px #000;
     opacity: 0;
     filter: alpha(opacity=0);
-    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.75s;
+    transition: opacity 0.35s, transform 0.75s;
     -webkit-transform: translate3d(100%,0,0);
     transform: translate3d(100%,0,0);
 }

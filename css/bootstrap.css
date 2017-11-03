@@ -3472,9 +3472,9 @@ input[type="button"].btn-block {
 }
 .fade {
   opacity: 0;
-  -webkit-transition: opacity .75s linear;
-  -o-transition: opacity .75s linear;
-  transition: opacity .75s linear;
+  -webkit-transition: opacity 1.00s linear;
+  -o-transition: opacity 1.00s linear;
+  transition: opacity 1.00s linear;
 }
 .fade.in {
   opacity: 1;
