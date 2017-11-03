@@ -1,3 +1,9 @@
+.modal-content {
+    height: 650px;
+    overflow: scroll;
+    position: fixed;
+}
+
 @media (min-width: 1500px) {
     .container {
         width: 1500px;
