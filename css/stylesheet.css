@@ -1,5 +1,5 @@
 .modal-content {
-    max-height: calc(100vh - 50px);
+    max-height: calc(100vh - 100px);
     width: 100%;
     overflow: scroll;
     position: fixed;
