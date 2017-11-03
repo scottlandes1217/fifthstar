@@ -1,5 +1,6 @@
 .modal-content {
     height: 550px;
+    width: 100%;
     overflow: scroll;
     position: fixed;
 }
