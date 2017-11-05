@@ -171,7 +171,7 @@ var LevelUp = function() {
         console.log('Level Completed!');
 
         gameLevel += 1;
-        
+
         console.log('Life: ' + Life + ', Level: ' + gameLevel);
        
         //Increase number of enemies based on player's level   
@@ -201,7 +201,7 @@ var increaseDifficulty = function(numEnemies) {
 // Declare new Life and gameLevel variables to store Life and level
 var allEnemies = [];
 var player = new Player((CANVAS_WIDTH / 2), CANVAS_BOTTOM, PLAYER_SPEED);
-var Life = 0;
+var Life = 1;
 var gameLevel = 1;
 var LifeLevelDiv = document.createElement('div');
 var enemy = new Enemy(Math.random() * (CANVAS_LEFT + 700), Math.random() * (ENEMYPATH_TOP + ENEMYPATH_BOTTOM), Math.random() * (350 - 50 + 1) + 50);
