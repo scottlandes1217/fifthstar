@@ -112,8 +112,8 @@ var Engine = (function(global) {
                 'arcade-images/stone-block.png',   // Row 1 of 3 of stone
                 'arcade-images/stone-block.png',   // Row 2 of 3 of stone
                 'arcade-images/stone-block.png',   // Row 3 of 3 of stone
-                'arcade-images/grass-block.png',   // Row 1 of 2 of grass
-                'arcade-images/grass-block.png'    // Row 2 of 2 of grass
+                'arcade-images/dirt-block.png',   // Row 1 of 2 of grass
+                'arcade-images/dirt-block.png'    // Row 2 of 2 of grass
             ],
             numRows = 6, //6
             numCols = 10, //5
@@ -170,6 +170,7 @@ var Engine = (function(global) {
         'arcade-images/stone-block.png',
         'arcade-images/water-block.png',
         'arcade-images/grass-block.png',
+        'arcade-images/dirt-block.png',
         'arcade-images/enemy-bug.png',
         'arcade-images/char-boy.png',
         'arcade-images/enemy-zombie.png',
