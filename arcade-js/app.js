@@ -90,7 +90,7 @@ Player.prototype.update = function() {
 
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    displayScoreLevel(score, gameLevel);
+    displayLifeLevel(Life, gameLevel);
 };
 
 
@@ -115,15 +115,15 @@ Player.prototype.handleInput = function(keyPress) {
     console.log('keyPress is: ' + keyPress);
 };
 
-// Function to display player's score
-var displayScoreLevel = function(aScore, aLevel) {
+// Function to display player's Life
+var displayLifeLevel = function(aLife, aLevel) {
     var canvas = document.getElementsByTagName('canvas');
     var firstCanvasTag = canvas[0];
 
-    // add player score and level to div element created
-    scoreLevelDiv.innerHTML = 'Score: ' + aScore +
+    // add player Life and level to div element created
+    LifeLevelDiv.innerHTML = 'Life: ' + aLife +
         ' / ' + 'Level: ' + aLevel;
-    document.body.insertBefore(scoreLevelDiv, firstCanvasTag[0]);
+    document.body.insertBefore(LifeLevelDiv, firstCanvasTag[0]);
 };
 
 // check if player runs into left, bottom, or right canvas walls
@@ -154,13 +154,13 @@ var detectCollision = function() {
             console.log('collided');
             player.x = (CANVAS_WIDTH / 2);
             player.y = CANVAS_BOTTOM;
-            score -= 1
+            Life -= 1
         }
     });
 };
 
 // check for player reaching top of canvas and winning the game
-// if player wins, add 1 to the score and level
+// if player wins, add 1 to the Life and level
 
 var LevelUp = function() {
 
@@ -171,8 +171,8 @@ var LevelUp = function() {
         console.log('Level Completed!');
 
         gameLevel += 1;
-        score += 1;
-        console.log('Score: ' + score + ', Level: ' + gameLevel);
+        
+        console.log('Life: ' + Life + ', Level: ' + gameLevel);
        
         //Increase number of enemies based on player's level   
         increaseDifficulty(gameLevel);
@@ -180,7 +180,7 @@ var LevelUp = function() {
     }
 };
 
-// Pass score as an argument to the increaseDifficulty function
+// Pass Life as an argument to the increaseDifficulty function
 // Increase number of enemies based on player's level
 var increaseDifficulty = function(numEnemies) {
     // remove all previous enemies on canvas
@@ -198,12 +198,12 @@ var increaseDifficulty = function(numEnemies) {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 // Enemy randomly placed vertically within section of canvas
-// Declare new score and gameLevel variables to store score and level
+// Declare new Life and gameLevel variables to store Life and level
 var allEnemies = [];
 var player = new Player((CANVAS_WIDTH / 2), CANVAS_BOTTOM, PLAYER_SPEED);
-var score = 0;
+var Life = 0;
 var gameLevel = 1;
-var scoreLevelDiv = document.createElement('div');
+var LifeLevelDiv = document.createElement('div');
 var enemy = new Enemy(Math.random() * (CANVAS_LEFT + 700), Math.random() * (ENEMYPATH_TOP + ENEMYPATH_BOTTOM), Math.random() * (350 - 50 + 1) + 50);
 
 allEnemies.push(enemy);
