@@ -17,7 +17,7 @@ var Enemy = function(x, y, speed) {
     this.y = y;
     this.speed = speed;
     // The image/sprite for our enemies, this uses
-    this.sprite = 'arcade-images/enemy-zombie.png';
+    this.sprite = "arcade-images/enemy-zombie.png";
     //collision
     this.width = 30;
     this.height = 20;
@@ -25,13 +25,13 @@ var Enemy = function(x, y, speed) {
 
 var Sprite = function() {
     if (enemy.speed >= 300)
-        sprite = 'arcade-images/enemy-zombie.png'
+        sprite = "arcade-images/enemy-zombie.png"
     if (enemy.speed <= 300)
-        sprite = 'arcade-images/enemy-bug.png'
+        sprite = "arcade-images/enemy-bug.png"
 }
 
 
-// Update the enemy's position, required method for game
+// Update the enemys position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
 
@@ -65,7 +65,7 @@ var Player = function(x, y, speed) {
     this.x = x;
     this.y = y;
     this.speed = speed;
-    this.sprite = 'arcade-images/char-scott.png';
+    this.sprite = "arcade-images/char-scott.png";
     //collision
     this.width = 30;
     this.height = 80;
@@ -90,40 +90,52 @@ Player.prototype.update = function() {
 
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    displayLifeLevel(Life, gameLevel);
+    displayLifeLevel(life, gameLevel);
 };
 
 
 //KeyPress Function
 
 Player.prototype.handleInput = function(keyPress) {
-    if (keyPress == 'left') {
+    if (keyPress == "left") {
         player.x -= player.speed;
     }
-    if (keyPress == 'up') {
+    if (keyPress == "up") {
         player.y -= player.speed;
     }
-    if (keyPress == 'right') {
+    if (keyPress == "right") {
         player.x += player.speed;
     }
-    if (keyPress == 'down') {
+    if (keyPress == "down") {
         player.y += player.speed;
-    }
-    if (keyPress == 'shift'+'left') {
-    player.x -= player.x;
 }
-    console.log('keyPress is: ' + keyPress);
+    console.log("keyPress is: " + keyPress);
 };
 
-// Function to display player's Life
-var displayLifeLevel = function(aLife, aLevel) {
-    var canvas = document.getElementsByTagName('canvas');
-    var firstCanvasTag = canvas[0];
+//Arrow Button Functions
 
+function UpArrow() {
+        player.y -= player.speed;
+    }
+function LeftArrow() {
+        player.x -= player.speed;
+    }
+function RightArrow() {
+        player.x += player.speed;
+    }
+function DownArrow() {
+        player.y += player.speed;
+}
+
+
+// Function to display player"s Life
+var displayLifeLevel = function() {
+    var canvas = document.getElementsByTagName("canvas");
+    LifeLevelDiv.setAttribute('class', 'lifelevel');
     // add player Life and level to div element created
-    LifeLevelDiv.innerHTML = 'Life: ' + aLife +
-        ' / ' + 'Level: ' + aLevel;
-    document.body.insertBefore(LifeLevelDiv, firstCanvasTag[0]);
+    LifeLevelDiv.innerHTML = "Life: " + life +
+        " | " + "Level: " + gameLevel;
+    document.body.appendChild(LifeLevelDiv);
 };
 
 // check if player runs into left, bottom, or right canvas walls
@@ -151,10 +163,10 @@ var detectCollision = function() {
             player.y < enemy.y + enemy.height &&
             player.height + player.y > enemy.y) {
 
-            console.log('collided');
+            console.log("collided");
             player.x = (CANVAS_WIDTH / 2);
             player.y = CANVAS_BOTTOM;
-            Life -= 1
+            life -= 1
         }
     });
 };
@@ -168,20 +180,20 @@ var LevelUp = function() {
 
         player.x = (CANVAS_WIDTH / 2);
         player.y = CANVAS_BOTTOM;
-        console.log('Level Completed!');
+        console.log("Level Completed!");
 
         gameLevel += 1;
 
-        console.log('Life: ' + Life + ', Level: ' + gameLevel);
+        console.log("Level: " + gameLevel);
        
-        //Increase number of enemies based on player's level   
+        //Increase number of enemies based on player"s level   
         increaseDifficulty(gameLevel);
 
     }
 };
 
 // Pass Life as an argument to the increaseDifficulty function
-// Increase number of enemies based on player's level
+// Increase number of enemies based on player"s level
 var increaseDifficulty = function(numEnemies) {
     // remove all previous enemies on canvas
     allEnemies.length = 0;
@@ -201,22 +213,22 @@ var increaseDifficulty = function(numEnemies) {
 // Declare new Life and gameLevel variables to store Life and level
 var allEnemies = [];
 var player = new Player((CANVAS_WIDTH / 2), CANVAS_BOTTOM, PLAYER_SPEED);
-var Life = 1;
+var life = 1;
 var gameLevel = 1;
-var LifeLevelDiv = document.createElement('div');
+var LifeLevelDiv = document.createElement("div");
 var enemy = new Enemy(Math.random() * (CANVAS_LEFT + 700), Math.random() * (ENEMYPATH_TOP + ENEMYPATH_BOTTOM), Math.random() * (350 - 50 + 1) + 50);
 
 allEnemies.push(enemy);
 
 // This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
-document.addEventListener('keyup', function(e) {
+// Player.handleInput() method. You don"t need to modify this.
+document.addEventListener("keyup", function(e) {
     var allowedKeys = {
-        37: 'left',
-        38: 'up',
-        39: 'right',
-        40: 'down',
-        16: 'shift'
+        37: "left",
+        38: "up",
+        39: "right",
+        40: "down",
+        16: "shift"
     };
 
     player.handleInput(allowedKeys[e.keyCode]);

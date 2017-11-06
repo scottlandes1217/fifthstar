@@ -5,9 +5,25 @@
     <title>BETA - Arcade Game</title>
     <link rel="stylesheet" href="css/arcade-style.css">
 </head>
-<body>
+<body onCollision="insertText();">
     <script src="arcade-js/resources.js"></script>
     <script src="arcade-js/app.js"></script>
     <script src="arcade-js/engine.js"></script>
-</body>
-</html>
+
+<section id="arrow-container">
+  <div class="up-arrow">
+      <button onclick="UpArrow()" class="arrow-key up-arrow"><img src="arcade-images/up-arrow.png"></button>
+    </div>
+
+    <div class="arrow-key">
+      <button onclick="LeftArrow()" class="arrow-key left-arrow"><img src="arcade-images/left-arrow.png"></button>
+    </div>
+
+    <div class="arrow-key">
+      <button onclick="DownArrow()" class="arrow-key down-arrow"><img src="arcade-images/down-arrow.png"></button>
+    </div>
+
+    <div class="arrow-key">
+    <button onclick="RightArrow()" class="arrow-key right-arrow"><img src="arcade-images/right-arrow.png"></button>
+  </div>
+</section>
