@@ -86,6 +86,7 @@ Player.prototype.update = function() {
 
     //Level Up Collision
     LevelUp(this);
+
 };
 
 Player.prototype.render = function() {
@@ -154,6 +155,7 @@ var borderCollision = function() {
     }
 };
 
+
 // check for collision between enemy and player
 
 var detectCollision = function() {
@@ -170,6 +172,12 @@ var detectCollision = function() {
         }
     });
 };
+
+
+//Game OVER
+if (life < 0) {
+        console.log("Game Over");
+    }
 
 // check for player reaching top of canvas and winning the game
 // if player wins, add 1 to the Life and level
@@ -238,4 +246,8 @@ if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function() {
         FastClick.attach(document.body);
     }, false);
+}
+
+window.onload = function() {
+    window.location.href = "#openModal";
 }

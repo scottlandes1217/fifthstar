@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=1000; user-scalable=0;"/>
+    <meta name="viewport" content="width=1000, user-scalable=0"/>
     <title>BETA - Arcade Game</title>
     <link rel="stylesheet" href="css/arcade-style.css">
 </head>
-<body onCollision="insertText();">
+<body>
     <script src="arcade-js/resources.js"></script>
     <script src="arcade-js/app.js"></script>
     <script src="arcade-js/engine.js"></script>
     <script type="application/javascript" src="arcade-js/fastclick.js"></script>
+
+
 
 <section id="arrow-container">
   <div class="up-arrow">
@@ -28,3 +30,11 @@
     <button onclick="RightArrow()" class="arrow-key right-arrow"><img src="arcade-images/right-arrow.png"></button>
   </div>
 </section>
+
+<div id="openModal" class="modalDialog">
+    <div>
+    <a href="#close" title="Close" class="close">X</a>
+    <h2>Welcome To Crossing Dead</h2>
+    <p>Use your keybooard or the Arrows to move your Character</p>
+    <p>Safely reaching the water will get to you to the next level</p>
+  </div>
