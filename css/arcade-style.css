@@ -1,3 +1,6 @@
+html,body {
+	user-zoom:fixed;
+}
 body {
     text-align: center;
     color:#fff;
