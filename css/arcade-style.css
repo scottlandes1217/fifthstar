@@ -21,7 +21,6 @@ canvas {
 
 #arrow-container {
 	float: right;
-	margin-right: 10%;
 	position: relative;
 	display:block;
 	z-index: 1;
