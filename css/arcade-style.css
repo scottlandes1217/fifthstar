@@ -11,7 +11,8 @@ canvas {
   margin-left: -500px;
 }
 
-.lifelevel {
+
+.liveslevel {
 	float: left;
 	margin-left: 150px;
 	margin-top: 15px;
@@ -43,7 +44,13 @@ canvas {
   margin: 5px;
 }
 
+@media screen and (min-width: 1064px) {
+    #arrow-container {
+        display: none;
+    }
+}
 
+/* Modal Styling */
 
 .modalDialog {
 	position: fixed;

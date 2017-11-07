@@ -91,7 +91,7 @@ Player.prototype.update = function() {
 
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-    displayLifeLevel(life, gameLevel);
+    displaylivesLevel(lives, gameLevel);
 };
 
 
@@ -129,14 +129,23 @@ function DownArrow() {
 }
 
 
-// Function to display player"s Life
-var displayLifeLevel = function() {
+// Function to display player"s lives
+var displaylivesLevel = function() {
     var canvas = document.getElementsByTagName("canvas");
-    LifeLevelDiv.setAttribute('class', 'lifelevel');
-    // add player Life and level to div element created
-    LifeLevelDiv.innerHTML = "Life: " + life +
+    livesLevelDiv.setAttribute('class', 'liveslevel');
+    // add player lives and level to div element created
+    livesLevelDiv.innerHTML = "Lives: " + lives +
         " | " + "Level: " + gameLevel;
-    document.body.appendChild(LifeLevelDiv);
+    document.body.appendChild(livesLevelDiv);
+};
+
+
+// Player loses life - Game Over
+Player.prototype.lives = function() {
+    lives = lives - 1;
+    if (lives < 1) {
+        console.log('gameover');
+    }
 };
 
 // check if player runs into left, bottom, or right canvas walls
@@ -168,19 +177,22 @@ var detectCollision = function() {
             console.log("collided");
             player.x = (CANVAS_WIDTH / 2);
             player.y = CANVAS_BOTTOM;
-            life -= 1
+            lives -= 1;
+            GameOver();
         }
     });
 };
 
 
 //Game OVER
-if (life < 0) {
-        console.log("Game Over");
+function GameOver() {
+    if (lives === 0) {
+        console.log('gameover');
     }
+}
 
 // check for player reaching top of canvas and winning the game
-// if player wins, add 1 to the Life and level
+// if player wins, add 1 to the lives and level
 
 var LevelUp = function() {
 
@@ -200,7 +212,7 @@ var LevelUp = function() {
     }
 };
 
-// Pass Life as an argument to the increaseDifficulty function
+// Pass lives as an argument to the increaseDifficulty function
 // Increase number of enemies based on player"s level
 var increaseDifficulty = function(numEnemies) {
     // remove all previous enemies on canvas
@@ -218,12 +230,12 @@ var increaseDifficulty = function(numEnemies) {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 // Enemy randomly placed vertically within section of canvas
-// Declare new Life and gameLevel variables to store Life and level
+// Declare new lives and gameLevel variables to store lives and level
 var allEnemies = [];
 var player = new Player((CANVAS_WIDTH / 2), CANVAS_BOTTOM, PLAYER_SPEED);
-var life = 1;
+var lives = 1;
 var gameLevel = 1;
-var LifeLevelDiv = document.createElement("div");
+var livesLevelDiv = document.createElement("div");
 var enemy = new Enemy(Math.random() * (CANVAS_LEFT + 700), Math.random() * (ENEMYPATH_TOP + ENEMYPATH_BOTTOM), Math.random() * (350 - 50 + 1) + 50);
 
 allEnemies.push(enemy);
@@ -242,12 +254,14 @@ document.addEventListener("keyup", function(e) {
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
+//Adds fast-click for mobile
 if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function() {
         FastClick.attach(document.body);
     }, false);
 }
 
+//Opens Modal on Reload
 window.onload = function() {
     window.location.href = "#openModal";
 }
