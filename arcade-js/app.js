@@ -139,15 +139,6 @@ var displaylivesLevel = function() {
     document.body.appendChild(livesLevelDiv);
 };
 
-
-// Player loses life - Game Over
-Player.prototype.lives = function() {
-    lives = lives - 1;
-    if (lives < 1) {
-        console.log('gameover');
-    }
-};
-
 // check if player runs into left, bottom, or right canvas walls
 // prevent player from moving beyond canvas wall boundaries
 
@@ -184,9 +175,15 @@ var detectCollision = function() {
 };
 
 
+function on() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+
 //Game OVER
 function GameOver() {
     if (lives === 0) {
+        document.write("<h1>Game Over</h1><h3>Refresh to play again</h3>");
         console.log('gameover');
     }
 }
@@ -233,7 +230,7 @@ var increaseDifficulty = function(numEnemies) {
 // Declare new lives and gameLevel variables to store lives and level
 var allEnemies = [];
 var player = new Player((CANVAS_WIDTH / 2), CANVAS_BOTTOM, PLAYER_SPEED);
-var lives = 1;
+var lives = 3;
 var gameLevel = 1;
 var livesLevelDiv = document.createElement("div");
 var enemy = new Enemy(Math.random() * (CANVAS_LEFT + 700), Math.random() * (ENEMYPATH_TOP + ENEMYPATH_BOTTOM), Math.random() * (350 - 50 + 1) + 50);
