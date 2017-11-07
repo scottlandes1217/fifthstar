@@ -1,3 +1,8 @@
+html, body  {
+	height: 100%; 
+	width: 100%;  
+	margin: 0;
+ }
 
 body {
     text-align: center;
@@ -6,7 +11,7 @@ body {
 canvas {
   border: 2px solid black;
   background-color: #000;
-  position: absolute;
+  position: fixed;
   z-index: -1;
   margin-left: -500px;
 }
@@ -14,14 +19,15 @@ canvas {
 
 .liveslevel {
 	float: left;
-	margin-left: 150px;
+	text-align: center;
+	width: 100%;
 	margin-top: 15px;
 	font-size: 20px;
+	position: absolute;
 }
 
 #arrow-container {
 	float: right;
-	position: relative;
 	display:block;
 	z-index: 1;
 	margin-top: 378px;
@@ -44,7 +50,7 @@ canvas {
 }
 
 @media screen and (min-width: 1064px) {
-    #arrow-container {
+    .arrow-key {
         display: none;
     }
 }
