@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  background: #000000;
+  background: #606060;
   height: 100%;
 }
 body h1 {
@@ -21,7 +21,7 @@ body h1 {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   position: relative;
-  background: white;
+  background: #454545;
   width: 70%;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   border-radius: 5px;
