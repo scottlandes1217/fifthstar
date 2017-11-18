@@ -1,14 +1,3 @@
-/* TODO:
- * clean up!
- * ===============
- * horizontal thumbnails
- * at small screens
- * and in fullscreen
- * ===============
- * create Mixins
- * ===============
- */
-@import "https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,400";
 /* colors */
 html {
   width: 100%;
@@ -16,9 +5,8 @@ html {
 }
 
 body {
-  background: #efefef;
+  background: #000000;
   color: #333;
-  font-family: "Raleway";
   height: 100%;
 }
 body h1 {
