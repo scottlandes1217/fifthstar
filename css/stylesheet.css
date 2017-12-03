@@ -61,6 +61,7 @@ p {
 }
 
 .title, .name {
+	font-family: Lato, Times;
     margin: 0;
 }
 
