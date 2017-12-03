@@ -60,8 +60,14 @@ p {
     margin-bottom: 0px;
 }
 
-.title, .name {
+.title {
 	font-family: Lato, Times;
+    margin: 0;
+}
+
+.name
+{
+	font-family: Times, Palatino;
     margin: 0;
 }
 
