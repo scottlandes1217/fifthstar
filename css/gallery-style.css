@@ -34,10 +34,6 @@ body h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   position: relative;
   height: 70vh;
   width: 100%;
@@ -51,15 +47,6 @@ body h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
   margin-right: 20px;
 }
 .gallery .wrap figure {
@@ -76,12 +63,6 @@ body h1 {
   text-align: center;
   margin: 0;
   display: block;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   opacity: 1;
 }
 .gallery .wrap figure label {
@@ -130,7 +111,6 @@ body h1 {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 0 10px;
-  z-index: 20;
 }
 .gallery .thumbnails .thumb {
   min-width: 60px;
@@ -145,8 +125,8 @@ body h1 {
   left: 0;
   border-radius: 3px;
   cursor: pointer;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   background-repeat: no-repeat;
 }
 .gallery .thumbnails .slider {
@@ -157,8 +137,8 @@ body h1 {
   z-index: 2;
   margin: 0;
   left: 0;
-  -webkit-transition: all 0.33s cubic-bezier(0.3, 0, 0.33, 1);
-  transition: all 0.33s cubic-bezier(0.3, 0, 0.33, 1);
+  -webkit-transition: all 0.5s cubic-bezier(0.3, 0, 0.33, 1);
+  transition: all 0.5s cubic-bezier(0.3, 0, 0.33, 1);
 }
 .gallery .thumbnails .slider .indicator {
   width: 100%;
