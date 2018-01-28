@@ -199,7 +199,6 @@ display: block;
   z-index: 2;
   margin: 0;
   left: 0;
-  -webkit-transition: all 0.33s cubic-bezier(0.3, 0, 0.33, 1);
   transition: all 0.33s cubic-bezier(0.3, 0, 0.33, 1);
 }
 .gallery .thumbnails .slider .indicator {
@@ -208,11 +207,30 @@ display: block;
   max-height: calc(100% - 10px);
   position: relative;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   background: #800000;
   border-radius: 1px;
 }
+
+/* Mobile Landscape Slider Fix */
+@media only screen 
+  and (orientation: landscape) 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) {
+    .gallery .thumbnails .slider .indicator {
+        transform: translateY(-80%);
+    }
+    }
+
+@media only screen 
+  and (orientation: landscape) 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) {
+    .gallery .thumbnails .slider {
+      height: calc(45px + 10px);
+    }
+    }
+
 
 /* Responsive additions */
 
@@ -221,10 +239,7 @@ display: block;
 .gallery .carousel  {
   height: 50vh;
     }
-
-
-
-
+}
 
 
 
