@@ -256,6 +256,73 @@ a:hover {
   }
 }
 
+.footer-logo {
+    max-width: 140px;
+    margin-left: -20px;
+    display: block;
+    margin-top: -15px;
+}
 
+.fifthstar-logo {
+  padding-left: 8px;
+}
+.fifthstar-logo img {
+  width: 100px;
+  margin-left: -10px;
+}
+
+.row-footer {
+
+    border-top: solid;
+    border-color: #ffffff;
+}
+
+.social-icon {
+  width: 50px;
+  padding: 10px 0px 10px 10px;
+}
+
+.row-footer {
+    background-color: #C4C4C4;
+
+}
+
+.footer-logo {
+    padding-top: 10px;
+}
+
+.contact-info-footer {
+  float: left;
+  padding: 0 0 0 10px;
+  font-size: 18px;
+}
+
+.contact-info-footer a {
+  text-decoration: underline;
+}
+
+.footer-text {
+  float: right;
+  padding: 0 55px 10px 25px;
+  font-size: 15px;
+}
+
+.footer-text a {
+  text-decoration: none;
+}
+
+
+.logo-container {
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+
+.logo-container-2 {
+  width: 100px;
+  float: right;
+  margin-top: 15px;
+}
 
 
