@@ -182,7 +182,7 @@
 
   </div>
 
-  
+
     <style type='text/css'>
   .embeddedServiceHelpButton .helpButton .uiButton {
     background-color: #005290;
@@ -244,7 +244,31 @@
   } else {
     initESW('https://service.force.com');
   }
+
+
+  function sendPageURLToSalesforce(chatKey) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://getcovered--developer.sandbox.my.salesforce.com/services/apexrest/ChatSessionDetail");
+    xhr.setRequestHeader("Content-Type", "application/json");
+    // Add other necessary headers, such as Authorization headers
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            console.log('Response from Salesforce:', xhr.responseText);
+        }
+    };
+
+    var payload = {
+        chatKey: chatKey,
+        pageUrl: window.location.href
+    };
+
+    xhr.send(JSON.stringify(payload));
+}
+
 </script>
+
+
 
 </body>
 
