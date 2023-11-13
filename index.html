@@ -216,12 +216,13 @@
 
     embedded_svc.settings.enabledFeatures = ['LiveAgent'];
     embedded_svc.settings.entryFeature = 'LiveAgent';
+
     embedded_svc.settings.extraPrechatFormDetails = [{
-      "label": "Source URL",
-      "value": window.location.href,
-      "displayToAgent": true,
-      "transcriptFields" : ["visitor_url__c"]
-      }];
+        "label": "Source URL",
+        "value": window.location.href,
+        "displayToAgent": true,
+        "transcriptFields" : ["visitor_url__c"]
+      }
 
     embedded_svc.init(
       'https://getcovered--developer.sandbox.my.salesforce.com',
@@ -237,6 +238,8 @@
         eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IEX000000001T2AQ_18bb5443809',
         isOfflineSupportEnabled: true
       }
+    );
+  };
 
   if (!window.embedded_svc) {
     var s = document.createElement('script');
