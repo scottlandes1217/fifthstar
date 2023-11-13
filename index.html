@@ -229,7 +229,7 @@
             console.log('Chat request successful:', data);
 
             // Attempt to capture a unique identifier for the chat session
-            var chatSessionId = data.sessionId || data.chatKey; // Adjust based on actual data structure
+            var chatSessionId = data.liveAgentSessionKey
 
             if(chatSessionId) {
                 console.log('Chat Session ID:', chatSessionId);
