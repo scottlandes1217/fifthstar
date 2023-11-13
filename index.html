@@ -11,6 +11,70 @@
   <script src="js/bootstrap.js"></script>
   <script src="js/javascript.js"></script>
 
+  <style type='text/css'>
+  .embeddedServiceHelpButton .helpButton .uiButton {
+    background-color: #005290;
+    font-family: "Arial", sans-serif;
+  }
+  .embeddedServiceHelpButton .helpButton .uiButton:focus {
+    outline: 1px solid #005290;
+  }
+</style>
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+  var initESW = function(gslbBaseURL) {
+    embedded_svc.settings.displayHelpButton = true; //Or false
+    embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+
+    //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+    //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+
+    //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+    //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+
+    // Settings for Chat
+    //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+      // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+      // Returns a valid button ID.
+    //};
+    //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+    //embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+    //embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+
+    embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+    embedded_svc.settings.entryFeature = 'LiveAgent';
+
+    embedded_svc.init(
+      'https://getcovered--developer.sandbox.my.salesforce.com',
+      'https://getcovered--developer.sandbox.my.site.com/',
+      gslbBaseURL,
+      '00DEi000000kQjJ',
+      'Einstein_Bot',
+      {
+        baseLiveAgentContentURL: 'https://c.la2s-core1.sfdc-lywfpd.salesforceliveagent.com/content',
+        deploymentId: '572EX000000006i',
+        buttonId: '573EX000000007R',
+        baseLiveAgentURL: 'https://d.la2s-core1.sfdc-lywfpd.salesforceliveagent.com/chat',
+        eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IEX000000001T2AQ_18bb5443809',
+        isOfflineSupportEnabled: true
+      }
+    );
+  };
+
+  if (!window.embedded_svc) {
+    var s = document.createElement('script');
+    s.setAttribute('src', 'https://getcovered--developer.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+    s.onload = function() {
+      initESW(null);
+    };
+    document.body.appendChild(s);
+  } else {
+    initESW('https://service.force.com');
+  }
+</script>
+
+
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet">
       <title>Scott Landes' Portfolio</title>
 </head>
@@ -166,8 +230,6 @@
         </div>
         <div class="modal-body about-text">
           <p>Currently I reside in the beautiful city of Bend, Oregon. I consider this to be my hometown and would never dream of living anywhere else in the U.S.. I graduated from Summit High School here in Bend in 2010 and immidiately started working full-time. I now have the job of my dreams and am working harder than ever to expand my knowledge and move up in my company. I have two incredible pets; a small gray kitty named Kitty and a Siberian Husky, Malamute, Gray Wolf mix named Vega. My hobbies consist of anything I can do with my dog including hiking, camping, and exploring new parts of Bend he can pee on.</p>
-              <script type='text/javascript' src='https://c.la2s-core1.sfdc-lywfpd.salesforceliveagent.com/content/g/js/59.0/deployment.js'></script>
-              <script type='text/javascript'>liveagent.init('https://d.la2s-core1.sfdc-lywfpd.salesforceliveagent.com/chat', '572EX000000006i', '00DEi000000kQjJ');</script>
         </div>
         
         <div class="modal-footer">
