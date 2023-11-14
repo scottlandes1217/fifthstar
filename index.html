@@ -193,6 +193,16 @@
   }
 </style>
 
+<style type='text/css'>
+  .embeddedServiceHelpButton .helpButton .uiButton {
+    background-color: #005290;
+    font-family: "Arial", sans-serif;
+  }
+  .embeddedServiceHelpButton .helpButton .uiButton:focus {
+    outline: 1px solid #005290;
+  }
+</style>
+
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
   var initESW = function(gslbBaseURL) {
@@ -225,16 +235,16 @@
       }];
 
     embedded_svc.init(
-      'https://getcovered--developer.sandbox.my.salesforce.com',
-      'https://getcovered--developer.sandbox.my.site.com/',
+      'https://getcovered.my.salesforce.com',
+      'https://getcovered.my.site.com/',
       gslbBaseURL,
-      '00DEi000000kQjJ',
+      '00D6g000001YXyV',
       'Einstein_Bot',
       {
-        baseLiveAgentContentURL: 'https://c.la2s-core1.sfdc-lywfpd.salesforceliveagent.com/content',
+        baseLiveAgentContentURL: 'https://c.la1-core1.sfdc-lywfpd.salesforceliveagent.com/content',
         deploymentId: '572EX000000006i',
         buttonId: '573EX000000007R',
-        baseLiveAgentURL: 'https://d.la2s-core1.sfdc-lywfpd.salesforceliveagent.com/chat',
+        baseLiveAgentURL: 'https://d.la1-core1.sfdc-lywfpd.salesforceliveagent.com/chat',
         eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IEX000000001T2AQ_18bb5443809',
         isOfflineSupportEnabled: true
       }
@@ -243,7 +253,7 @@
 
   if (!window.embedded_svc) {
     var s = document.createElement('script');
-    s.setAttribute('src', 'https://getcovered--developer.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+    s.setAttribute('src', 'https://getcovered.my.salesforce.com/embeddedservice/5.0/esw.min.js');
     s.onload = function() {
       initESW(null);
     };
@@ -251,8 +261,6 @@
   } else {
     initESW('https://service.force.com');
   }
-
-
 </script>
 
 </body>
