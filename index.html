@@ -182,7 +182,9 @@
 
   </div>
 
+
 <style type='text/css'>
+  
   .embeddedServiceHelpButton .helpButton .uiButton {
     background-color: #005290;
     font-family: "Arial", sans-serif;
@@ -190,6 +192,12 @@
   .embeddedServiceHelpButton .helpButton .uiButton:focus {
     outline: 1px solid #005290;
   }
+  .formattedRichText {
+    display: block;
+    margin: 20px;
+    margin-bottom: 40px;
+  }
+
 </style>
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
@@ -204,6 +212,10 @@
     "displayToAgent": true,
     "transcriptFields" : ["visitor_url__c"]
     }];
+    
+  var initESW = function(gslbBaseURL) {
+    embedded_svc.settings.displayHelpButton = true; //Or false
+    embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
 
     //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
     //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
@@ -225,7 +237,7 @@
 
     embedded_svc.init(
       'https://getcovered.my.salesforce.com',
-      'https://getcovered.my.site.com',
+      'https://getcovered.my.site.com/',
       gslbBaseURL,
       '00D6g000001YXyV',
       'Einstein_Bot',
